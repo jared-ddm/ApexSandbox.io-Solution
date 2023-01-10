@@ -6,5 +6,5 @@ public Map<String, Account> phoneToAccount(List<Account> accounts) {
             accountsByPhone.put(acc.Phone, acc);
         }
     }
-    return;
+    return accountsByPhone;
 }
