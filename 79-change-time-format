@@ -1,0 +1,39 @@
+public String changeTimeFormat(String strTime) {
+    String hourStr = strTime.substring(0, 2);
+    String minStr = strTime.substring(3, 5);
+
+    Integer hour = Integer.valueOf(hourStr);
+    Integer min = Integer.valueOf(minStr);
+
+
+    if (hour < 13 && hour != 0) {
+        String newHourStr = String.valueOf(hour);
+        String prefix = ' AM';
+
+        if (hour == 12) prefix = ' PM';
+        
+        if (newHourStr.length() < 2) {
+            newHourStr = '0' + newHourStr;
+        }
+        String timeNew = newHourStr + ':' +  minStr + prefix;
+        return timeNew;
+
+    } else if (hour > 12) {
+        hour -= 12;
+        String newHourStr = String.valueOf(hour);
+        
+        if (newHourStr.length() < 2) {
+            newHourStr = '0' + newHourStr;
+        }
+
+        String timeNew = newHourStr + ':' + minStr + ' PM';
+        return timeNew;
+
+    } else {
+        hour = 12;
+        String newHourStr = String.valueOf(hour);
+
+        String timeNew = newHourStr + ':' + minStr + ' AM';
+        return timeNew;
+    }
+}
