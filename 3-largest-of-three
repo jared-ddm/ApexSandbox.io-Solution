@@ -1,0 +1,4 @@
+public static Integer findLargest(Integer num1, Integer num2, Integer num3) {
+	Integer biggestNum = Math.Max(num1, num2);
+    return Math.Max(biggestNum, num3);
+}
